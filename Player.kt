@@ -10,7 +10,7 @@ class Player(_name: String,
         private set(value) {
             field = value.trim()
         }
-    val hometown =  selectHometown()
+    val hometown by lazy {selectHometown()}
     private fun selectHometown() = File("data/data.txt")
         .readText()
         .split("\n")
