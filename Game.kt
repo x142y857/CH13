@@ -4,7 +4,7 @@ import java.lang.Math.random
 
 fun main() {
 
-    val player = Player("翁子皓", 89, true, false)
+    val player = Player("翁子皓")
     player.castFireball()
     //Aura
     val auraColor =player.auraColor()
