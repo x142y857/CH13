@@ -1,15 +1,18 @@
 class Player(_name: String,
-             var =healthPoints: Int,
-             val =isBlessed: Boolean,
-             private val =isImmortal: Boolean) {
+             var healthPoints: Int,
+             val isBlessed: Boolean,
+             private val isImmortal: Boolean) {
 
     var name = _name
         get() = field.capitalize()
         private set(value) {
             field = value.trim()
         }
+    constructor(name:String) : this(name,
+            healthPoints = 100,
+            isBlessed = true,
+            isImmortal = false)
 
-}
 
     fun auraColor(): String {
         val auraVisible = isBlessed && healthPoints > 50 || isImmortal
