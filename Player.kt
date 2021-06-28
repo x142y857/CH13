@@ -8,6 +8,10 @@ class Player(_name: String,
         private set(value) {
             field = value.trim()
         }
+    init{
+        require(healthPoints >0 ,{"健康值必須大於0"})
+        require(name.isNotBlank(),{"玩家必須有名字"})
+    }
     constructor(name:String) : this(name,
             isBlessed = true,
             isImmortal = false) {
