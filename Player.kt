@@ -1,3 +1,5 @@
+import java.io.File
+
 class Player(_name: String,
              var healthPoints: Int = 100,
              val isBlessed: Boolean,
@@ -8,7 +10,15 @@ class Player(_name: String,
         private set(value) {
             field = value.trim()
         }
-    init{
+    val hometown =  selectHometown()
+    private fun selectHometown() = File("data/data.txt")
+        .readText()
+        .split("\n")
+        .shuffled()
+        .first()
+
+
+init{
         require(healthPoints >0 ,{"健康值必須大於0"})
         require(name.isNotBlank(),{"玩家必須有名字"})
     }
